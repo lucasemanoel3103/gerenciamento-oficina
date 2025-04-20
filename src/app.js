@@ -1,17 +1,10 @@
 import express from 'express';
+import conexao from '../infra/conexao.js';
 
 const app = express();
 
 app.use(express.json()); // Middleware para converter o body da requisição em JSON
 
-//mock de dados
-const cars = [
-   {id: 1, modelo: 'Tiguan', motor: '2.0', ano: 2010, cliente: 'Pedro', situacao: 'Aguardando orçamento', contato: 11996678902},
-    {id: 2, modelo: 'Civic', motor: '1.5', ano: 2018, cliente: 'Maria', situacao: 'Em serviço', contato: 11998278901},
-    {id: 3, modelo: 'Corolla', motor: '2.0', ano: 2020, cliente: 'João', situacao: 'Aguardando aprovação do cliente', contato: 11999878501},    
-    {id: 4, modelo: 'Onix', motor: '1.0', ano: 2021, cliente: 'Ana', situacao: 'Pronto', contato: 11999789567},
-    {id: 5, modelo: 'Fusca', motor: '1.3', ano: 1970, cliente: 'Carlos', situacao: 'Aguardando pagamento', contato: 11999678901},
-];
 
 function searchCarById(id) {
     return cars.filter((car) => car.id == id);
@@ -22,23 +15,45 @@ function searchIndexCar(id){
     return cars.findIndex((car) => car.id == id);
 }
 
-//Rota Padrão
-app.get('/', (req, res) => {
-    res.send('Hello World!');
-});
 
 app.get('/cars', (req, res) => {
-    res.status(200).send(cars);
+    //res.status(200).send(cars);
+    const sql = 'SELECT * FROM cars';
+    conexao.query(sql, (error, result) => {
+        if(error) {
+            res.status(404).json( {'error': error});
+        } else {
+            res.status(200).json(result);
+        }
+    })
 });
 
 app.get('/cars/:id', (req, res) => {
+    //res.json(searchCarById(id));
     const id = req.params.id;
-    res.json(searchCarById(id));
+    const sql = 'SELECT * FROM cars WHERE id=?;'
+    conexao.query(sql, id, (error, result) => {
+        const row = result[0];
+        if(error) {
+            res.status(404).json( {'error': error});
+        } else {
+            res.status(200).json(row);
+        }
+    })
 });
 
 app.post('/cars', (req, res) => {
-    cars.push(req.body);
-    res.status(201).send('Carro deu entrtada na oficina!');              
+    //cars.push(req.body);
+   // res.status(201).send('Carro deu entrtada na oficina!');  
+   const cars = req.body;
+   const sql = 'INSERT INTO cars SET ?;'
+   conexao.query(sql, cars, (error, result) => {
+       if(error) {
+           res.status(400).json( {'error': error});
+       } else {
+           res.status(201).json(result);
+       }
+   })            
 });
 
 app.delete('/cars/:id', (req, res) => {
