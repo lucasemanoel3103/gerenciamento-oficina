@@ -36,9 +36,9 @@ npm run dev
 
 🛣️ Rotas da API:
 
-Carros
-
-Método:	    Rota:	        Descrição:
+Método:	    
+Rota:	        
+Descrição:
 
 GET	        /carros	        Lista todos os carros cadastrados no sistema 
 
@@ -57,20 +57,31 @@ Tabela: carros
 Campo:	    Tipo:	                Descrição:
 
 id	        INT (PK)	            Identificador do carro
+
 modelo	    VARCHAR	                Modelo do carro
+
 motor       DECIMAL                 Motorização do carro
+
 placa	    VARCHAR	                Placa do carro (única)
+
 ano	        INT	                    Ano de fabricação
+
 situacao	VARCHAR	                Situação na oficina (ex: Arguardando orçamento, Pronto, etc)
+
 telefone    VARCHAR                 Telefone do cliente para contato
+
 cliente     VARCHAR                 Nome do dono do veiculo
+
 km          DECIMAL                 Pra controle dos serviços a serem feitos
 
 ✅ Funcionalidades já implementadas:
 
  Conexão com banco MySQL
+ 
  CRUD completo de carros
+ 
  Separação de arquivos (rotas, controllers, repositories)
+ 
  Atualização de status do carro dentro da oficina
 
 
