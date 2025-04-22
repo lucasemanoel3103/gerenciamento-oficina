@@ -41,9 +41,13 @@ Carros
 Método:	    Rota:	        Descrição:
 
 GET	        /carros	        Lista todos os carros cadastrados no sistema 
+
 GET	        /carros/:id	    Lista um carro específico por ID
+
 POST	    /carros	        Cadastra um novo carro no sistema 
+
 PUT	        /carros/:id	    Atualiza a situação do carro dentro da oficina
+
 DELETE	    /carros/:id	    Remove um carro do sistema
 
 🗃️ Estrutura do banco de dados:
