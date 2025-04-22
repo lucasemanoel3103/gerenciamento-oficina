@@ -13,4 +13,14 @@ const conexao = mysql.createConnection({
 
 conexao.connect();
 
+export const consult = (sql, values='', messageReject) => {
+    return new Promise((resolve, reject) => {
+        conexao.query(sql, values, (error, result) => {
+            if(error) return reject (messageReject);
+            const row = JSON.parse(JSON.stringify(result));
+            return resolve(row);
+        })
+    })
+}
+
 export default conexao

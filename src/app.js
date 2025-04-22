@@ -1,14 +1,10 @@
 import express from 'express';
-import CarController from './app/controllers/carController.js';
+import routes from './routes.js';
 
 const app = express();
 
 app.use(express.json()); 
 
-app.get('/cars', CarController.index);
-app.get('/cars/:id', CarController.show);
-app.post('/cars', CarController.store);
-app.put('/cars/:id', CarController.update);
-app.delete('/cars/:id', CarController.delete);
+app.use(routes);
 
- export default app; 
+export default app; 
