@@ -69,4 +69,30 @@ km          DECIMAL                 Pra controle dos serviços a serem feitos
  Separação de arquivos (rotas, controllers, repositories)
  Atualização de status do carro dentro da oficina
 
+As imagens abaixo mostram exemplos de requisições feitas no Postman:
+
+Get /cars
+
+<img src="src/assets/Postman-get.png" alt="Texto alternativo 1" width="48%" />
+
+Get /cars/id
+
+<img src="src/assets/Postman-getbyid.png" alt="Texto alternativo 1" width="48%" />
+
+Post /cars
+
+<img src="src/assets/Postman-api-post.png" alt="Texto alternativo 1" width="48%" />
+
+Put /cars/id
+
+<img src="src/assets/Postman-api-put.png" alt="Texto alternativo 1" width="48%" />
+
+Delete /cars/id
+
+<img src="src/assets/Postman-delete.png" alt="Texto alternativo 1" width="48%" />
+
+
+
+
+
 
