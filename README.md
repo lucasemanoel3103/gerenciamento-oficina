@@ -39,37 +39,37 @@ npm run dev
 
 🛣️ Rotas da API:
 
-- GET	        /carros	        Lista todos os carros cadastrados no sistema 
+- GET	        /carros	   -     Lista todos os carros cadastrados no sistema 
 
-- GET	        /carros/:id	    Lista um carro específico por ID
+- GET	        /carros/:id	 -   Lista um carro específico por ID
 
-- POST	    /carros	        Cadastra um novo carro no sistema 
+- POST	    /carros	   -     Cadastra um novo carro no sistema 
 
-- PUT	        /carros/:id	    Atualiza a situação do carro dentro da oficina
+- PUT	        /carros/:id	 -   Atualiza a situação do carro dentro da oficina
 
-- DELETE	    /carros/:id	    Remove um carro do sistema
+- DELETE	    /carros/:id	-    Remove um carro do sistema
 
 🗃️ Estrutura do banco de dados:
 
 Tabela: carros
 
-- id	        INT (PK)	            Identificador do carro
+- id	        INT (PK):	            Identificador do carro
 
-- modelo	    VARCHAR	                Modelo do carro
+- modelo	    VARCHAR:	                Modelo do carro
 
-- motor       DECIMAL                 Motorização do carro
+- motor       DECIMAL:                 Motorização do carro
 
-- placa	    VARCHAR	                Placa do carro (única)
+- placa	    VARCHAR:	                Placa do carro (única)
 
-- ano	        INT	                    Ano de fabricação
+- ano	        INT:                    Ano de fabricação
 
-- situacao	VARCHAR	                Situação na oficina (ex: Arguardando orçamento, Pronto, etc)
+- situacao	VARCHAR:	                Situação na oficina (ex: Arguardando orçamento, Pronto, etc)
 
-- telefone    VARCHAR                 Telefone do cliente para contato
+- telefone    VARCHAR:                 Telefone do cliente para contato
 
-- cliente     VARCHAR                 Nome do dono do veiculo
+- cliente     VARCHAR:                 Nome do dono do veiculo
 
-- km          DECIMAL                 Pra controle dos serviços a serem feitos
+- km          DECIMAL:                 Pra controle dos serviços a serem feitos
 
 ✅ Funcionalidades já implementadas:
 
