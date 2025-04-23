@@ -104,6 +104,20 @@ Delete /cars/id
 <img src="src/assets/Postman-delete.png" alt="Texto alternativo 1" width="48%" />
 
 
+🚀 Futuro do Projeto
+Este projeto está em constante evolução e, futuramente, pretendo adicionar novas funcionalidades, como:
+
+- Integração com pagamento: Para controle de custos de serviços realizados na oficina.
+
+- Gestão de clientes: Para registrar informações dos clientes e associá-las aos carros.
+
+- Notificações: Enviar notificações para os clientes sobre o status dos carros.
+
+- Dashboard de visualização: Interface com gráficos para facilitar o gerenciamento de dados.
+
+A ideia é expandir o sistema para torná-lo mais completo e adaptável às necessidades de uma oficina real.
+
+
 
 
 
