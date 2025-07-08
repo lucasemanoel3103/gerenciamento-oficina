@@ -1,30 +1,28 @@
-
-import {consult} from '../database/conexao.js';
+import Car from '../models/Car'
 
 class CarRepository {
     findAll(){
-        const sql = 'SELECT * FROM cars;'
-        return consult(sql, 'Não foi possivel encontrar nenhum carro!')
+        return Car.findAll()
     }
 
     findById(id){
-        const sql = 'SELECT * FROM cars WHERE id=?;'
-        return consult(sql, id, 'Não foi possivel encontrar esse carro!')
+        return Car.findByPk(id)
     }
 
     create(car) {
-        const sql = 'INSERT INTO cars SET ?;'
-        return consult(sql, car, 'Não foi possivel cadastrar o carro!')
+        return Car.create(car)
     }
 
     update(car, id ) {
-        const sql = 'UPDATE cars SET ? WHERE id=?;'
-        return consult(sql, [car, id], 'Não foi possivel atualizar a situação desse carro!')
+        return Car.update(car, {
+            where: {id}
+        });
     }
 
     delete(id){
-        const sql = 'DELETE FROM cars WHERE id=?;'
-        return consult(sql, id, 'Não foi possivel deletar o carro do sistema!')
+        return Car.destroy({
+            where: {id}
+        });
     }
 }
     

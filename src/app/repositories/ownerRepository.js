@@ -1,4 +1,3 @@
-import { where } from "sequelize";
 import Owner from "../models/Owner";
 
 class OwnerRepository {
